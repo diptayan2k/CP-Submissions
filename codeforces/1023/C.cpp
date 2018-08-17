@@ -14,7 +14,8 @@ j=k/2; l=k/2;
  {cout<<s[i]; j--;}
 if(s[i]==')'&&l)
  {cout<<s[i]; l--;}
-if(!j&&!l) exit(0);}
+
+ }
  //for(i=0;i<n;i++) cout<<endl<<s[i]<<" "<<i;
 
 
