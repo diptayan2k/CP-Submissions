@@ -264,6 +264,18 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF48786581": {
+    "contest_id": 1029,
+    "language": "GNU C++14",
+    "path": "codeforces\\1029\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Many Equal Substrings",
+    "problem_url": "https://codeforces.com/contest/1029/problem/A",
+    "submission_id": "CF48786581",
+    "submission_url": "https://codeforces.com/contest/1029/submission/48786581",
+    "tags": [],
+    "timestamp": "Jan/23/2019 14:45"
+  },
   "CF48786706": {
     "contest_id": 1029,
     "language": "GNU C++14",
