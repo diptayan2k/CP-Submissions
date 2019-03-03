@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF50743676": {
+    "contest_id": 1121,
+    "language": "GNU C++14",
+    "path": "codeforces\\1121\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Technogoblet of Fire",
+    "problem_url": "https://codeforces.com/contest/1121/problem/A",
+    "submission_id": "CF50743676",
+    "submission_url": "https://codeforces.com/contest/1121/submission/50743676",
+    "tags": [
+      "implementation",
+      "sortings",
+      "*1100"
+    ],
+    "timestamp": "Mar/03/2019 21:21"
+  },
   "CF50749117": {
     "contest_id": 1121,
     "language": "GNU C++14",
