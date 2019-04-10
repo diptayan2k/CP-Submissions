@@ -264,6 +264,23 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF52574916": {
+    "contest_id": 893,
+    "language": "GNU C++14",
+    "path": "codeforces\\893\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Rumor",
+    "problem_url": "https://codeforces.com/contest/893/problem/C",
+    "submission_id": "CF52574916",
+    "submission_url": "https://codeforces.com/contest/893/submission/52574916",
+    "tags": [
+      "dfs and similar",
+      "graphs",
+      "greedy",
+      "*1300"
+    ],
+    "timestamp": "Apr/10/2019 21:25"
+  },
   "CF52576307": {
     "contest_id": 115,
     "language": "GNU C++14",
