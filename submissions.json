@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF54034212": {
+    "contest_id": 1159,
+    "language": "GNU C++14",
+    "path": "codeforces\\1159\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Expansion coefficient of the array",
+    "problem_url": "https://codeforces.com/contest/1159/problem/B",
+    "submission_id": "CF54034212",
+    "submission_url": "https://codeforces.com/contest/1159/submission/54034212",
+    "tags": [
+      "implementation",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "May/12/2019 20:36"
+  },
   "CF54287098": {
     "contest_id": 1166,
     "language": "GNU C++14",
