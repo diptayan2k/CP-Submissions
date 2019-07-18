@@ -1,93 +1,170 @@
 #include <iostream>
 #include<bits/stdc++.h>
 #define ll long long int
-#define lld long double
+#define f(i,a,b) for(ll i=a;i<=b;i++)
+#define g(i,b,a) for(ll i=a;i>=b;i--)
 #define F first
+#define vv vector
 #define S second
-#define f(i,a,b) for(int i=a;i<=b;i++)
-#define g(i,a,b) for(int i=a;i>=b;i--)
 #define mp make_pair
 #define pb push_back
-#define mh make_heap
-#define ph push_heap
-#define pq priority_queue
-#define bits(x) __builtin_popcountll(x)
-#define op(x) cout<<"Case #"<<x<<": "
-#define op1(x) cout<<"Scenario #"<<x<<": "
-using namespace std;
-const ll mod = 1000000007;
-const ll INF = 1e18;
-const int N = 21;
+using namespace std; 
+ 
+ 
+/*
 
-void solve(int t)
+ 
+void dfs(vv<ll> v[],bool vis[],ll i,ll sum[],ll a[], ll c[])
 {
-	ll m, n;
-	cin >> n >> m;
-	if(n==1 and m==0)
-	{
-		cout<<0<<" "<<0<<endl;
-		return;
-	}
-	if (m == 0 or m > 9 * n)
-	{
-		cout << -1 << " " << -1 << endl;
-		return;
-	}
-
-	string s1 = "";
-	ll sum = 0;
-	for (int i = 1; i <= n; i++)
-	{
-		if (sum + 9 <= m)
-		{
-			s1 += "9";
-			sum += 9;
-		}
-		else
-		{
-			ll d = m - sum;
-			s1 += (char)'0' + d;
-			sum += d;
-		}
-
-	}
-
-
-	string s2 = s1;
-	reverse(s2.begin(), s2.end());
-	if (s2[0] == '0')
-	{
-		s2[0]++;
-		for (int i = 1; i < n; i++)
-		{
-			if (s2[i] != '0')
-			{
-				s2[i]--;
-				break;
-			}
-		}
-	}
-	cout << s2 << " " << s1 << endl;
+      vis[i]=true;
+     sum[i]=a[i];
+     c[i]=0;
+ 
+    if(!v[i].empty())
+    f(j,0,v[i].size()-1)
+    if(!vis[v[i][j]])
+    {
+    dfs(v,vis,v[i][j],sum,a,c);
+    sum[i]+=sum[v[i][j]];
+    c[i]++;
+    }
+ 
+ 
+ 
 }
-
-int main()
+ll p;
+void dfs1(vv<ll> v[],bool vis[],ll i,ll sum[],ll c[], ll a[])
 {
-
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-
-	int t = 1;
-	//cin >> t;
-
-	for (int i = 1; i <= t; i++)
-	{
-		solve(i);
-
-	}
+      vis[i]=true;
+ 
+ 
+    if(!v[i].empty())
+    f(j,0,v[i].size()-1)
+    if(!vis[v[i][j]])
+    {
+    dfs1(v,vis,v[i][j],sum,c,a);
+    s=max(s,s-sum[v[i][j]]-m);
+    }
+    p=p-sum[i]-m;
+    s=max(s,p);
+ 
+ 
+ 
+ 
+}
+ 
+ll binarySearchCount(ll arr[], ll n, ll key, ll d)
+{ ll left =d;
+ll     right = n;
+ 
+    ll mid;
+    while (left < right)
+    {
+        mid = (right + left) >> 1;
+ 
+        // Check if key is present in array
+        if (arr[mid] == key)
+        {
+            // If duplicates are present it returns
+            // the position of last element
+            while (mid+1<n && arr[mid+1] == key)
+                 mid++;
+            break;
+        }
+ 
+        // If key is smaller, ignore right half
+        else if (arr[mid] > key)
+            right = mid;
+ 
+        // If key is greater, ignore left half
+        else
+            left = mid + 1;
+    }
+ 
+    // If key is not found in array then it will be
+    // before mid
+    while (mid > -1 && arr[mid] > key)
+        mid--;
+ 
+    //Return mid + 1 because of 0-based indexing
+    // of array
+    return mid-d + 1;
+}
+ 
+*/
+bool sortinrev(const pair<ll,ll> &a,
+               const pair<ll,ll> &b)
+{
+       return (a.first > b.first);
+}
+ll func(string a, string b)
+{ string c;
+    if(a.length()>b.length())
+     { c+=a.substr(0,a.length()-b.length());
+    f(i,0,b.length()-1)
+    {
+      c+=a[a.length()-b.length()+i];
+      c+=b[i];
+    }}
+    if(a.length()==b.length())
+     { //c+=a.substr(0,a.length()-b.length());
+    f(i,0,b.length()-1)
+    {
+      c+=a[i];
+      c+=b[i];
+    }}
+ 
+    if(a.length()<b.length())
+     { c+=b.substr(0,b.length()-a.length());
+    f(i,0,a.length()-1)
+    {
+ 
+    c+=a[i];
+     c+=b[b.length()-a.length()+i];
+    }}
+    ll d=0;
+    f(i,0,c.length()-1)
+    {d=((d*10)%998244353+((ll)c[i]-48)%998244353)%998244353;
+ 
+    }
+    //cout<<c<<endl<<endl;
+    return d;
+}
+ 
+int main(){
+   ll n,s;
+   cin>>n>>s;
+   string a;
+   if(s>9*n||(s==0&&n>1)) 
+   {cout<<"-1"<<" "<<"-1";
+    exit(0);}
+   f(i,1,n)
+   { if(s>=10)
+     {a+="9";
+     s-=9;
+	 }
+	 else if(s>0)
+	 {a+=(char)(48+s);
+	  s=0;
+	 }
+	 else 
+	 a+="0";
+   }
+  // a+=(char)(48+s);
+   
+   
+   reverse(a.begin(),a.end());
+   string b=a;
+   if(b[0]=='0'&&n>1)
+   { b[0]='1';
+   f(i,1,n-1)
+   {if(b[i]!='0')
+   {b[i]=b[i]-1;
+    break;
+   }
+   }}
+   
+   cout<<b<<" ";
+   reverse(a.begin(),a.end());
+   cout<<a;
 }
