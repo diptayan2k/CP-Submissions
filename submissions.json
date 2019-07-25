@@ -264,6 +264,24 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF57726907": {
+    "contest_id": 1196,
+    "language": "GNU C++14",
+    "path": "codeforces\\1196\\D2.cpp",
+    "problem_index": "D2",
+    "problem_name": "RGB Substring (hard version)",
+    "problem_url": "https://codeforces.com/contest/1196/problem/D2",
+    "submission_id": "CF57726907",
+    "submission_url": "https://codeforces.com/contest/1196/submission/57726907",
+    "tags": [
+      "data structures",
+      "dp",
+      "implementation",
+      "two pointers",
+      "*1600"
+    ],
+    "timestamp": "Jul/25/2019 12:56"
+  },
   "CF57795807": {
     "contest_id": 1183,
     "language": "GNU C++14",
