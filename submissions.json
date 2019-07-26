@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF57795807": {
+    "contest_id": 1183,
+    "language": "GNU C++14",
+    "path": "codeforces\\1183\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Nearest Interesting Number",
+    "problem_url": "https://codeforces.com/contest/1183/problem/A",
+    "submission_id": "CF57795807",
+    "submission_url": "https://codeforces.com/contest/1183/submission/57795807",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Jul/26/2019 16:51"
+  },
   "CF57796129": {
     "contest_id": 1183,
     "language": "GNU C++14",
