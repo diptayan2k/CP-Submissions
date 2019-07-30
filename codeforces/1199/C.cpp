@@ -174,7 +174,7 @@ int main(){
 ll y=1;
  y=power(2,q);
 //cout<<m.size()<<" "<<y<<endl;
-    if(q>=k) {cout<<0; exit(0);}
+    if(y>=m.size()||y==0) {cout<<0; exit(0);}
     //cout<<y<<endl;
     f(i,0,v.size()-1)
     {
