@@ -16,13 +16,13 @@ using namespace std;
 
 
 int main(){
-    ll n;
-    cin>>n;
-    string s[n];
-
+    ll V;
+    cin>>V;
+    string s[V];
+    ll n=V;
     f(i,0,n-1) cin>>s[i];
 
-    ll dist[n][n], i, j, k;
+    ll dist[V][V], i, j, k;
     ll graph[n][n];
 
     f(i,0,n-1) f(j,0,n-1) graph[i][j]=s[i][j]-'0';
@@ -35,8 +35,8 @@ int main(){
     for (k = 0; k < n; k++)
     {  for (i = 0; i < n; i++)
         {  for (j = 0; j < n; j++)
-            {
-                    dist[i][j] = min(dist[i][k]+dist[k][j],dist[i][j]);
+            {  if (dist[i][k] + dist[k][j] < dist[i][j])
+                    dist[i][j] = dist[i][k] + dist[k][j];
             }
         }
     }
