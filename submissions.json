@@ -264,6 +264,23 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF59894264": {
+    "contest_id": 1200,
+    "language": "GNU C++14",
+    "path": "codeforces\\1200\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Hotelier",
+    "problem_url": "https://codeforces.com/contest/1200/problem/A",
+    "submission_id": "CF59894264",
+    "submission_url": "https://codeforces.com/contest/1200/submission/59894264",
+    "tags": [
+      "brute force",
+      "data structures",
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Sep/02/2019 17:03"
+  },
   "CF59897197": {
     "contest_id": 1200,
     "language": "GNU C++14",
