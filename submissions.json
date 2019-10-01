@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF61624526": {
+    "contest_id": 1234,
+    "language": "GNU C++17",
+    "path": "codeforces\\1234\\B1.cpp",
+    "problem_index": "B1",
+    "problem_name": "Social Network (easy version)",
+    "problem_url": "https://codeforces.com/contest/1234/problem/B1",
+    "submission_id": "CF61624526",
+    "submission_url": "https://codeforces.com/contest/1234/submission/61624526",
+    "tags": [
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Oct/01/2019 20:24"
+  },
   "CF61626299": {
     "contest_id": 1234,
     "language": "GNU C++17",
