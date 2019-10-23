@@ -1,57 +1,43 @@
 #include <iostream>
 #include<bits/stdc++.h>
 #define ll long long int
-#define lld long double
+#define f(i,a,b) for(ll i=a;i<=b;i++)
+#define g(i,a,b) for(ll i=a;i>=b;i--)
 #define F first
+#define vv vector
 #define S second
-#define f(i,a,b) for(int i=a;i<=b;i++)
-#define g(i,a,b) for(int i=a;i>=b;i--)
 #define mp make_pair
 #define pb push_back
 #define mh make_heap
 #define ph push_heap
 #define pq priority_queue
-#define bits(x) __builtin_popcountll(x)
-#define op(x) cout<<"Case #"<<x<<": "
-#define op1(x) cout<<"Case "<<x<<": "
 using namespace std;
-const ll mod = 1000000007;
-const ll INF = 1e18;
-const int N = 21;
-ll k;
-ll a[100001] = {0};
-ll b[100001] = {0};
-void solve(int t)
-{
-	ll x, y;
-	cin >> x >> y;
-	cout << (b[y] - b[x - 1]+mod) % mod << endl;
-}
+ll mod=1000000007;
+
+
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
 
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
+ios_base::sync_with_stdio(false);
+cin.tie(0);
+cout.tie(0);
+ll t,k;
+cin>>t>>k;
+ll a[100001];
+a[0]=0;
+f(i,1,k-1) a[i]=1;
+a[k]=2;
+f(i,k+1,100000) a[i]=(a[i-1]%mod+a[i-k]%mod)%mod;
+ll b[100001];
+b[0]=a[0];
+f(i,1,100001) b[i]=(b[i-1]%mod+a[i]%mod)%mod;
+while(t--)
+{
+    ll aa,bb;
+    cin>>aa>>bb;
 
-	int t = 1;
-	cin >> t >> k;
+    cout<<(b[bb]-b[aa-1]+mod)%mod<<endl;
 
-	for (int i = 0; i < k; i++) a[i] = 1;
-	for (int i = k; i <= 100000; i++) a[i] = (a[i - k] + a[i - 1]) % mod;
-	b[0] = a[0];
-
-	for (int i = 1; i <= 100000; i++ ) b[i] = (a[i] + b[i - 1]) % mod;
-
-
-	for (int i = 1; i <= t; i++)
-	{
-		solve(i);
-
-	}
+}
 }
