@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF63282579": {
+    "contest_id": 118,
+    "language": "GNU C++17",
+    "path": "codeforces\\118\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Caesar's Legions",
+    "problem_url": "https://codeforces.com/contest/118/problem/D",
+    "submission_id": "CF63282579",
+    "submission_url": "https://codeforces.com/contest/118/submission/63282579",
+    "tags": [
+      "dp",
+      "*1700"
+    ],
+    "timestamp": "Oct/24/2019 14:41"
+  },
   "CF63325634": {
     "contest_id": 446,
     "language": "GNU C++17",

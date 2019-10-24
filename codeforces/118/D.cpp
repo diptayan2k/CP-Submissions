@@ -1,12 +1,10 @@
 #include <iostream>
 #include<bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
 #define ll long long int
 #define f(i,a,b) for(ll i=a;i<=b;i++)
 #define g(i,a,b) for(ll i=a;i>=b;i--)
-#define init(arr,val) memset(arr,val,sizeof(arr))
 #define F first
+#define vv vector
 #define S second
 #define mp make_pair
 #define pb push_back
@@ -14,62 +12,53 @@
 #define ph push_heap
 #define pq priority_queue
 using namespace std;
-using namespace __gnu_pbds;
-typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> pbds;
-
-ll n1,n2,k1,k2;
-ll dp[101][101][11][11];
-ll mod=100000000;
-ll foo(ll i, ll j, ll k, ll l)
-{
-    if(i==n1 and j==n2)
-    {
-        return 1;
-    }
-    if(i>n1 or j>n2) return 0;
-
-    if(dp[i][j][k][l]!=-1)
-    {
-        return dp[i][j][k][l];
-
-    }
-
-    ll res=0;
-    if(k<k1)
-    res=(res%mod+foo(i+1,j,k+1,0)%mod)%mod;
-    if(l<k2)
-    res=(res%mod+foo(i,j+1,0,l+1)%mod)%mod;
-
-
-    return dp[i][j][k][l]=res%mod;
-}
-
-
-void solve(ll t)
-{
-    f(i,0,100) f(j,0,100) f(k,0,10) f(l,0,10) dp[i][j][k][l]=-1;
-    cin>>n1>>n2>>k1>>k2;
-    cout<<foo(0,0,0,0);
-
-
-}
-
-
-
-
-
+ll mod=1000000007;
 
 
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    ll t=1;
-    f(i,1,t)
+
+ios_base::sync_with_stdio(false);
+cin.tie(0);
+cout.tie(0);
+ll n,m,k,l;
+cin>>n>>m>>k>>l;
+
+ll dp[n+1][m+1][k+1][l+1];
+memset(dp,0,sizeof(dp));
+/*
+f(i,0,n)
+{
+   f(j,0,k) dp[i][0][j][0]=1;
+}
+f(i,0,m)
+{
+   f(j,0,l) dp[0][i][0][j]=1;
+}*/
+f(i,0,n)
+{
+    f(j,0,m)
     {
-        solve(i);
+        f(p,0,k)
+        {
+            f(q,0,l)
+            {
+                ll c=0;
+                if(i+j==0) c=1;
+                else{
+                if(i>0&&p>0) c+=dp[i-1][j][p-1][l];
+                if(j>0&&q>0) c+=dp[i][j-1][k][q-1];}
+               dp[i][j][p][q]=c%100000000;;
+               //cout<<i<<" "<<j<<" "<<p<<" "<<q<<" "<<c<<endl;
+            }
+        }
     }
+}
+cout<<dp[n][m][k][l];
+
+
+
+
 
 }
-
-
