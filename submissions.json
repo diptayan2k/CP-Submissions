@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF65573524": {
+    "contest_id": 1255,
+    "language": "Java 11",
+    "path": "codeforces\\1255\\B.java",
+    "problem_index": "B",
+    "problem_name": "Fridge Lockers",
+    "problem_url": "https://codeforces.com/contest/1255/problem/B",
+    "submission_id": "CF65573524",
+    "submission_url": "https://codeforces.com/contest/1255/submission/65573524",
+    "tags": [
+      "graphs",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Nov/23/2019 14:07"
+  },
   "CF65632543": {
     "contest_id": 1262,
     "language": "GNU C++14",
