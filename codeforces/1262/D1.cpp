@@ -24,11 +24,9 @@ bool sortinrev(const pair<ll,ll> &a,
 int main()
 {
 
-
 ll n;
 cin>>n;
 ll a[n];
-
 vector< pair<ll,ll> > vvv;
 f(i,0,n-1) {
 cin>>a[i];
@@ -46,17 +44,17 @@ while(t--)
 {
     ll k,p;
     cin>>k>>p;
-    vector< pair<ll,ll> > v;
+    vector< ll > v;
 
 
     f(i,0,k-1)
     {
-        v.pb({vvv[i].S,-1*vvv[i].F});
+        v.pb(vvv[i].S);
     }
 
     sort(v.begin(),v.end());
 
-    cout<<v[p-1].S<<endl;
+    cout<<a[v[p-1]]<<endl;
 
 }
 
