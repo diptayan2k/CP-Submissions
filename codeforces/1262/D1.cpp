@@ -14,14 +14,9 @@
 #define ds set <ll, greater<ll> >
 using namespace std;
 
-bool sortinrev(const pair<ll,ll> &a, const pair<ll,ll> &b)
+bool sortinrev(const pair<ll,ll> &a,
+               const pair<ll,ll> &b)
 {
-       if(a.first == b.first)
-       {
-            return (a.second < b.second);
-       }
-
-       else
        return (a.first > b.first);
 }
 
@@ -39,8 +34,8 @@ f(i,0,n-1) {
 cin>>a[i];
 }
 f(i,0,n-1)
-vvv.pb({a[i],i});
-sort(vvv.begin(),vvv.end(),sortinrev);
+vvv.pb({-1*a[i],i});
+sort(vvv.begin(),vvv.end());
 
 
 
@@ -56,7 +51,7 @@ while(t--)
 
     f(i,0,k-1)
     {
-        v.pb({vvv[i].S,vvv[i].F});
+        v.pb({vvv[i].S,-1*vvv[i].F});
     }
 
     sort(v.begin(),v.end());
