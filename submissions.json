@@ -264,6 +264,24 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF65845321": {
+    "contest_id": 1262,
+    "language": "GNU C++14",
+    "path": "codeforces\\1262\\D2.cpp",
+    "problem_index": "D2",
+    "problem_name": "Optimal Subsequences (Hard Version)",
+    "problem_url": "https://codeforces.com/contest/1262/problem/D2",
+    "submission_id": "CF65845321",
+    "submission_url": "https://codeforces.com/contest/1262/submission/65845321",
+    "tags": [
+      "binary search",
+      "data structures",
+      "greedy",
+      "sortings",
+      "*1800"
+    ],
+    "timestamp": "Nov/27/2019 20:02"
+  },
   "CF65967039": {
     "contest_id": 1263,
     "language": "GNU C++14",
