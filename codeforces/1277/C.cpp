@@ -32,19 +32,24 @@ while(t--)
     cin>>s;
 
 
-    for(string i:{"twone","one","two"})
-        {
-
-            for(ll j=0; j<=(ll)s.length()-(ll)i.length(); j++)
-            {
-                //cout<<i<<" "<<(ll)s.length()-(ll)i.length()<<" "<<j<<endl;
-                if(s.substr(j,i.length())== i)
-                {
-                    s[j+i.length()/2]='.';
-                }
-            }
-
-        }
+    if(s.length()>=5)
+    f(i,2,s.length()-3)
+    {
+        if(s.substr(i-2,5)=="twone")
+            s[i]='.';
+    }
+    if(s.length()>=3)
+    f(i,1,s.length()-2)
+    {
+        if(s.substr(i-1,3)=="two")
+            s[i]='.';
+    }
+    if(s.length()>=3)
+    f(i,1,s.length()-2)
+    {
+        if(s.substr(i-1,3)=="one")
+            s[i]='.';
+    }
 
 
     ll c=0;
