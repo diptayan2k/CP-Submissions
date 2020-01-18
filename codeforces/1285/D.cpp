@@ -22,7 +22,7 @@ typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_up
 
 ll solve(ll bit, vector<ll> v)
 {
-    if(bit<0) return 0;
+    if(bit<0||v.empty()) return 0;
     vector<ll> on,off;
     for(ll i:v)
     {
