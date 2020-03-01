@@ -27,7 +27,7 @@ ll foo(ll i, ll bt, ll prev)
 {
     if(i==n+1)
     {
-        if(bt==k) return 0;
+        if(bt==k+1) return 0;
         return mod;
 
     }
@@ -65,7 +65,7 @@ void solve(ll d)
 
     f(i,0,104) f(j,0,104) f(k,0,104) dp[i][j][k]=-1;
 
-    ll ans=foo(1,0,-1);
+    ll ans=foo(1,1,-1);
     if(ans>=mod)
     {
         cout<<-1<<endl;
