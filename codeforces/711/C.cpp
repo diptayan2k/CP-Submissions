@@ -20,7 +20,7 @@ int a[105];
 int dp[101][105][101], p[105][105];
 
 int foo(int ind, int gr, int prev){
-    if(ind == n + 1){  
+    if(ind == n + 1){
         if(gr == k + 1)
             return 0;
         return BINF;
