@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF72939736": {
+    "contest_id": 33,
+    "language": "GNU C++17",
+    "path": "codeforces\\33\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Wonderful Randomized Sum",
+    "problem_url": "https://codeforces.com/contest/33/problem/C",
+    "submission_id": "CF72939736",
+    "submission_url": "https://codeforces.com/contest/33/submission/72939736",
+    "tags": [
+      "greedy",
+      "*1800"
+    ],
+    "timestamp": "Mar/11/2020 13:43"
+  },
   "CF73000590": {
     "contest_id": 73,
     "language": "GNU C++17",
