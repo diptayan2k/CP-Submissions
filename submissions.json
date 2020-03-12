@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF73000590": {
+    "contest_id": 73,
+    "language": "GNU C++17",
+    "path": "codeforces\\73\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "LionAge II",
+    "problem_url": "https://codeforces.com/contest/73/problem/C",
+    "submission_id": "CF73000590",
+    "submission_url": "https://codeforces.com/contest/73/submission/73000590",
+    "tags": [
+      "dp",
+      "*1800"
+    ],
+    "timestamp": "Mar/12/2020 12:20"
+  },
   "CF73030449": {
     "contest_id": 1324,
     "language": "GNU C++17",
