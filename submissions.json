@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF75261760": {
+    "contest_id": 30,
+    "language": "GNU C++17",
+    "path": "codeforces\\30\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Shooting Gallery",
+    "problem_url": "https://codeforces.com/contest/30/problem/C",
+    "submission_id": "CF75261760",
+    "submission_url": "https://codeforces.com/contest/30/submission/75261760",
+    "tags": [
+      "dp",
+      "probabilities",
+      "*1800"
+    ],
+    "timestamp": "Apr/02/2020 21:23"
+  },
   "CF75274090": {
     "contest_id": 212,
     "language": "GNU C++17",
