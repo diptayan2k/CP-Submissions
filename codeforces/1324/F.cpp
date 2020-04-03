@@ -16,15 +16,14 @@
 using namespace std;
 using namespace __gnu_pbds;
 typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> pbds;
-
 ll n;
 vector<ll> v[200001];
 ll a[200001];
 ll dp[200001];
 ll dp1[200001];
-
 void dfs(ll u, ll par)
 {
+    //cout<<u<<endl;
     dp[u]=a[u];
 
     for(auto i:v[u])
@@ -51,10 +50,12 @@ void dfs1(ll u, ll par)
 void solve(ll t)
 {
     cin>>n;
+    //cout<<n<<endl;
     f(i,1,n)
     {
         cin>>a[i];
         if(a[i]==0) a[i]=-1;
+        //cout<<a[i]<<endl;
     }
 
     f(i,1,n-1)
@@ -63,17 +64,23 @@ void solve(ll t)
         cin>>x>>y;
         v[x].pb(y);
         v[y].pb(x);
+       // cout<<"HI"<<endl;
     }
-
+    //cout<<"HI";
     dfs(1,0);
-    dp1[0]=0;
 
+    dp1[0]=0;
+    //cout<<"HI";
     dfs1(1,0);
 
     f(i,1,n)
     {
         cout<<dp[i]+dp1[i]<<" ";
     }
+
+
+
+
 }
 
 int main()
@@ -82,7 +89,8 @@ int main()
     cin.tie(NULL);
 
     ll t=1;
-    
+    //cin>>t;
+
     f(i,1,t)
     {
         solve(i);
