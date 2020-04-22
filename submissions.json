@@ -264,6 +264,23 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF77668314": {
+    "contest_id": 916,
+    "language": "GNU C++17",
+    "path": "codeforces\\916\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Jamie and Binary Sequence (changed after round)",
+    "problem_url": "https://codeforces.com/contest/916/problem/B",
+    "submission_id": "CF77668314",
+    "submission_url": "https://codeforces.com/contest/916/submission/77668314",
+    "tags": [
+      "bitmasks",
+      "greedy",
+      "math",
+      "*2000"
+    ],
+    "timestamp": "Apr/22/2020 21:12"
+  },
   "CF77725586": {
     "contest_id": 888,
     "language": "GNU C++17",
