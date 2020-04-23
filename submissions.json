@@ -264,6 +264,23 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF77725586": {
+    "contest_id": 888,
+    "language": "GNU C++17",
+    "path": "codeforces\\888\\E.cpp",
+    "problem_index": "E",
+    "problem_name": "Maximum Subsequence",
+    "problem_url": "https://codeforces.com/contest/888/problem/E",
+    "submission_id": "CF77725586",
+    "submission_url": "https://codeforces.com/contest/888/submission/77725586",
+    "tags": [
+      "bitmasks",
+      "divide and conquer",
+      "meet-in-the-middle",
+      "*1800"
+    ],
+    "timestamp": "Apr/23/2020 13:23"
+  },
   "CF77780867": {
     "contest_id": 1341,
     "language": "GNU C++17",
