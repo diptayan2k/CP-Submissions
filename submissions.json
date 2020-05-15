@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF80236670": {
+    "contest_id": 1353,
+    "language": "GNU C++14",
+    "path": "codeforces\\1353\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Board Moves",
+    "problem_url": "https://codeforces.com/contest/1353/problem/C",
+    "submission_id": "CF80236670",
+    "submission_url": "https://codeforces.com/contest/1353/submission/80236670",
+    "tags": [
+      "math",
+      "*1000"
+    ],
+    "timestamp": "May/15/2020 20:17"
+  },
   "CF80250844": {
     "contest_id": 1353,
     "language": "GNU C++14",
