@@ -17,6 +17,24 @@
 using namespace std;
 const ll mod = 1e9 + 7;
 
+bool ispossible(ll a[], ll val, ll n)
+{
+	ll cn = 0;
+	ll sz = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] <= ++sz)
+		{
+			cn++;
+			sz = 0;
+		}
+	}
+
+	if (cn >= val) return true;
+	return false;
+}
+
+
 
 void solve(int t)
 {
