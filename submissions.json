@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF82458868": {
+    "contest_id": 429,
+    "language": "GNU C++17",
+    "path": "codeforces\\429\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Working out",
+    "problem_url": "https://codeforces.com/contest/429/problem/B",
+    "submission_id": "CF82458868",
+    "submission_url": "https://codeforces.com/contest/429/submission/82458868",
+    "tags": [
+      "dp",
+      "*1600"
+    ],
+    "timestamp": "Jun/04/2020 13:06"
+  },
   "CF82503174": {
     "contest_id": 1362,
     "language": "GNU C++17",
