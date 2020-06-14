@@ -19,7 +19,28 @@ const ll mod = 1000000007;
 const ll INF = 1e18;
 const int N = 100001;
 
+ll tree[200005] = {0};
 
+void update(ll val)
+{
+	for (int i = N + val; i > 0; i /= 2)
+	{
+		tree[i] += 1;
+	}
+}
+
+ll query(ll l, ll r)
+{
+	ll sum = 0;
+	for (l += N, r += N; l < r; l /= 2, r /= 2)
+	{
+		if (l % 2 == 1) sum += tree[l++];
+		if (r % 2 == 1) sum += tree[--r];
+	}
+
+	return sum;
+
+}
 
 void solve(int t)
 {
@@ -42,7 +63,15 @@ void solve(int t)
 	{
 		if (i > 0 and a[i] != a[i - 1]) b[i] = a[i - 1];
 		else b[i] = v[j++];
-
+		if (b[i] <= 100000)
+		{
+			update(b[i]);
+		}
+		if (query(0, a[i]) != a[i])
+		{
+			cout << -1 << endl;
+			return ;
+		}
 	}
 
 
