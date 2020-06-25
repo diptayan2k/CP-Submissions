@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF84941729": {
+    "contest_id": 300,
+    "language": "GNU C++17",
+    "path": "codeforces\\300\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Beautiful Numbers",
+    "problem_url": "https://codeforces.com/contest/300/problem/C",
+    "submission_id": "CF84941729",
+    "submission_url": "https://codeforces.com/contest/300/submission/84941729",
+    "tags": [
+      "brute force",
+      "combinatorics",
+      "*1800"
+    ],
+    "timestamp": "Jun/25/2020 11:26"
+  },
   "CF84947424": {
     "contest_id": 337,
     "language": "GNU C++17",
