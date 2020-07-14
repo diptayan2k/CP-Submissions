@@ -264,6 +264,24 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF86851341": {
+    "contest_id": 407,
+    "language": "GNU C++14",
+    "path": "codeforces\\407\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "Triangle",
+    "problem_url": "https://codeforces.com/contest/407/problem/A",
+    "submission_id": "CF86851341",
+    "submission_url": "https://codeforces.com/contest/407/submission/86851341",
+    "tags": [
+      "brute force",
+      "geometry",
+      "implementation",
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Jul/14/2020 22:27"
+  },
   "CF86891119": {
     "contest_id": 242,
     "language": "GNU C++14",
