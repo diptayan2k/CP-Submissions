@@ -264,6 +264,21 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF87828063": {
+    "contest_id": 243,
+    "language": "GNU C++14",
+    "path": "codeforces\\243\\A.cpp",
+    "problem_index": "A",
+    "problem_name": "The Brand New Function",
+    "problem_url": "https://codeforces.com/contest/243/problem/A",
+    "submission_id": "CF87828063",
+    "submission_url": "https://codeforces.com/contest/243/submission/87828063",
+    "tags": [
+      "bitmasks",
+      "*1600"
+    ],
+    "timestamp": "Jul/24/2020 10:52"
+  },
   "CF87834505": {
     "contest_id": 198,
     "language": "GNU C++14",
