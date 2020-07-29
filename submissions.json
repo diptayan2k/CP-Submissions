@@ -264,6 +264,24 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF88259589": {
+    "contest_id": 222,
+    "language": "GNU C++17",
+    "path": "codeforces\\222\\C.cpp",
+    "problem_index": "C",
+    "problem_name": "Reducing Fractions",
+    "problem_url": "https://codeforces.com/contest/222/problem/C",
+    "submission_id": "CF88259589",
+    "submission_url": "https://codeforces.com/contest/222/submission/88259589",
+    "tags": [
+      "implementation",
+      "math",
+      "number theory",
+      "sortings",
+      "*1800"
+    ],
+    "timestamp": "Jul/29/2020 12:42"
+  },
   "CF88300136": {
     "contest_id": 1389,
     "language": "GNU C++17",
