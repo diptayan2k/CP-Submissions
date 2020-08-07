@@ -18,8 +18,7 @@ using namespace std;
 const ll mod = 1000000007;
 const ll INF = 1e18;
 const int N = 18;
-const int d = (1ll << N);
-ll F[d];
+
 
 
 
@@ -54,6 +53,7 @@ void solve(int t)
 	while (q--)
 	{
 		//cout << q << endl;
+
 		char ch;
 		ll x;
 		cin >> ch >> x;
@@ -66,7 +66,12 @@ void solve(int t)
 			st.erase(st.find({old, x}));
 
 		}
-                st.insert({m[x], x});
+		st.insert({m[x], x});
+		/*
+		for (auto i : st)
+		{
+			cout << i.S << " " << i.F << endl;
+		}*/
 
 		vector<ll> v;
 		auto it = st.end();
@@ -85,6 +90,15 @@ void solve(int t)
 			it--;
 			v.pb((*it).F);
 		}
+
+		//m[x] = old;
+		/*
+		for (auto i : v)
+		{
+			cout << i << " ";
+		}*/
+		//cout << endl;
+
 		if (v.empty())
 		{
 			cout << "NO" << endl;
