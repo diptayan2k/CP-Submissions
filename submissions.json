@@ -264,6 +264,26 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF89480315": {
+    "contest_id": 1391,
+    "language": "GNU C++17",
+    "path": "codeforces\\1391\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "505",
+    "problem_url": "https://codeforces.com/contest/1391/problem/D",
+    "submission_id": "CF89480315",
+    "submission_url": "https://codeforces.com/contest/1391/submission/89480315",
+    "tags": [
+      "bitmasks",
+      "brute force",
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "implementation",
+      "*2000"
+    ],
+    "timestamp": "Aug/10/2020 10:27"
+  },
   "CF89568033": {
     "contest_id": 1393,
     "language": "GNU C++17",
