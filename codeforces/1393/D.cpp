@@ -22,36 +22,93 @@ const int N = 18;
 ll n, m;
 ll lvl[2001][2001];
 string s[2001];
-
+bool vis[2001][2001];
 
 
 
 void solve(int t)
 {
 	cin >> n >> m;
-	ll ans = 0;
 
 	for (int i = 0; i < n; i++) cin >> s[i];
 
+	memset(vis, false, sizeof(vis));
+
+	for (int ch = 'a'; ch <= 'z'; ch++)
+	{
+		queue<pair<ll, ll> > q;
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				if (s[i][j] == ch)
+				{
+					if (i == 0 or i == n - 1 or j == 0 or j == m - 1)
+					{
+						q.push({i, j});
+						lvl[i][j] = 1;
+						vis[i][j] = true;
+					}
+					else if (s[i - 1][j] != ch or s[i + 1][j] != ch or s[i][j - 1] != ch or s[i][j + 1] != ch)
+					{
+						q.push({i, j});
+						lvl[i][j] = 1;
+						vis[i][j] = true;
+					}
+				}
+			}
+		}
+
+		while (!q.empty())
+		{
+			ll x = q.front().F;
+			ll y = q.front().S;
+			q.pop();
+
+			if (x > 0 and s[x - 1][y] == ch and !vis[x - 1][y])
+			{
+				q.push({x - 1, y});
+				vis[x - 1][y] = true;
+				lvl[x - 1][y] = lvl[x][y] + 1;
+			}
+
+			if (y > 0 and s[x][y - 1] == ch and !vis[x][y - 1])
+			{
+				q.push({x, y - 1});
+				vis[x][y - 1] = true;
+				lvl[x][y - 1] = lvl[x][y] + 1;
+			}
+
+			if (x < n - 1 and s[x + 1][y] == ch and !vis[x + 1][y])
+			{
+				q.push({x + 1, y});
+				vis[x + 1][y] = true;
+				lvl[x + 1][y] = lvl[x][y] + 1;
+			}
+
+			if (y < m - 1 and s[x][y + 1] == ch and !vis[x][y + 1])
+			{
+				q.push({x, y + 1});
+				vis[x][y + 1] = true;
+				lvl[x][y + 1] = lvl[x][y] + 1;
+			}
+
+
+		}
+	}
+
+	ll sum = 0;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
 		{
-			if (i >= 2 and j >= 1 and j < m - 1 and s[i - 2][j] == s[i][j] and s[i - 1][j] == s[i][j] and s[i - 1][j - 1] == s[i][j] and s[i - 1][j + 1] == s[i][j])
-			{
-				lvl[i][j] = min({lvl[i - 2][j], lvl[i - 1][j], lvl[i - 1][j - 1] , lvl[i - 1][j + 1]}) + 1;
-			}
-			else lvl[i][j] = 1;
-			ans += lvl[i][j];
-
 			//cout << lvl[i][j] << " ";
+			sum += lvl[i][j];
 		}
 		//cout << endl;
 	}
 
-	cout << ans << endl;
-
-
+	cout << sum << endl;
 
 
 
