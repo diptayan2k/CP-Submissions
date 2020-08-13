@@ -82,13 +82,13 @@ void solve(int t)
 		small.pb(small[s]);
 	}
 	ans = 0;
-	for (int i = 0 ; i <= b; i++)
+	for (int i = (b + d) / (1 + d) ; i <= b; i++)
 	{
 		ll x = i;
 		ll y = (x - 1) * (d + 1) + 1;
 		ll z = n - y;
 
-		if ( z >= 0 and y <= n and z < small.size())
+		if ( y <= n)
 		{
 			ans = max(ans, big[i] + small[z]);
 		}
