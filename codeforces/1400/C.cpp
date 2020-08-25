@@ -1,0 +1,112 @@
+#include <iostream>
+#include<bits/stdc++.h>
+#define ll long long int
+#define lld long double
+#define F first
+#define S second
+#define f(i,a,b) for(int i=a;i<=b;i++)
+#define g(i,a,b) for(int i=a;i>=b;i--)
+#define pb push_back
+#define mh make_heap
+#define ph push_heap
+#define pq priority_queue
+#define bits(x) __builtin_popcountll(x)
+#define op(x) cout<<"Case #"<<x<<": "
+#define op1(x) cout<<"Scenario #"<<x<<": "
+#define endl "\n"
+using namespace std;
+const ll mod = 1000000007;
+const ll INF = LLONG_MAX;
+const int N = 18;
+
+
+
+
+void solve(int t)
+{
+
+	string s;
+	ll x;
+	cin >> s >> x;
+	ll n = s.length();
+
+	string ans;
+
+	for (int i = 0; i < n; i++)
+	{
+		ans += "1";
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		if (s[i] == '0')
+		{
+			if (i - x >= 0) ans[i - x] = '0';
+			if (i + x < n) ans[i + x] = '0';
+		}
+	}
+
+	//cout << ans << endl;
+	for (int i = 0; i < n; i++)
+	{
+		if (s[i] == '1')
+		{
+			ll p = 0;
+			ll q = 0;
+
+			if (i - x >= 0)
+			{
+				p++;
+				if (ans[i - x] == '0') q++;
+
+			}
+			if (i + x < n)
+			{
+				p++;
+				if (ans[i + x] == '0') q++;
+			}
+
+			if (p == q)
+			{
+				cout << -1 << endl;
+				return;
+			}
+		}
+
+
+
+
+	}
+
+	cout << ans << endl;
+
+
+
+
+}
+
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
+
+
+	int t = 1;
+	cin >> t;
+
+
+
+	for (int i = 1; i <= t; i++)
+	{
+		solve(i);
+
+	}
+}
