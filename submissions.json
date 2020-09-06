@@ -264,6 +264,22 @@
     ],
     "timestamp": "Dec/19/2020 16:25"
   },
+  "CF92020236": {
+    "contest_id": 1409,
+    "language": "GNU C++17",
+    "path": "codeforces\\1409\\D.cpp",
+    "problem_index": "D",
+    "problem_name": "Decrease the Sum of Digits",
+    "problem_url": "https://codeforces.com/contest/1409/problem/D",
+    "submission_id": "CF92020236",
+    "submission_url": "https://codeforces.com/contest/1409/submission/92020236",
+    "tags": [
+      "greedy",
+      "math",
+      "*1500"
+    ],
+    "timestamp": "Sep/06/2020 19:26"
+  },
   "CF92022847": {
     "contest_id": 1409,
     "language": "GNU C++17",
