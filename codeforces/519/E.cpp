@@ -124,7 +124,43 @@ void solve(int t)
 	while (q--)
 	{
 
-		
+
+		ll j, k;
+		cin >> j >> k;
+
+		if (j == k)
+			cout << n << '\n';
+		else
+		{
+			ll l = lca(j, k);
+			if (lev[j] - lev[l] == lev[k] - lev[l])
+			{
+				ll ans = n;
+				ll diff = lev[j] - lev[l] - 1;
+				ll x = kthparent(j, diff);
+				ans -= subtr[x];
+				x = kthparent(k, diff);
+				ans -= subtr[x];
+				cout << ans << "\n";
+			}
+			else
+			{
+				ll dist = lev[j] + lev[k] - 2 * lev[l];
+				if (dist % 2 == 1)
+					cout << 0 << '\n';
+				else
+				{
+					if (lev[j] < lev[k])
+						swap(j, k);
+					ll x = kthparent(j, dist / 2);
+					ll p1 = kthparent(j, dist / 2 - 1);
+					ll ans = subtr[x] - subtr[p1];
+					cout << ans << '\n';
+				}
+			}
+		}
+
+		/*
 		ll x, y;
 		cin >> x >> y;
 		if (lev[y] > lev[x]) swap(x, y);
@@ -156,7 +192,7 @@ void solve(int t)
 		ll q = kthparent(x, dis / 2 - 1);
 
 		cout << subtr[p] - subtr[q] << endl;
-		
+		*/
 
 
 
