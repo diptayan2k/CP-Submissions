@@ -43,51 +43,36 @@ void dfs(ll u, ll parent)
 
 }
 
-ll kthparent(ll x, ll d)
+ll kthparent(ll x, ll y)
 {
-	for (int i = 0; i < 20; i++)
+	for (ll i = 20; i >= 0; i--)
 	{
-		if (((1ll << i)&d) != 0)
-			x = par[x][i];
+		if (y >= (1ll << i))
+			x = par[x][i], y -= (1ll << i);
 	}
-
 	return x;
 }
 
 
 
 
-ll lca(ll u, ll v)
+ll lca(ll x, ll y)
 {
-	if (lev[u] < lev[v]) swap(u, v);
-	ll i, lg;
-	for (lg = 0; (1 << lg) <= lev[u]; lg++);
-	lg--;
-
-
-
-	for (i = lg; i >= 0; i--)
+	if (lev[x] < lev[y])
+		swap(x, y);
+	for (ll i = 20; i >= 0; i--)
 	{
-		if ((lev[u] - (1 << i)) >= lev[v])
-			u = par[u][i];
-
+		if (lev[x] - (1ll << i) >= lev[y])
+			x = par[x][i];
 	}
-
-
-	if (u == v) return u;
-
-
-
-	for (i = lg; i >= 0; i--)
+	if (x == y)
+		return x;
+	for (ll i = 20; i >= 0; i--)
 	{
-		if (par[u][i] != -1 and par[u][i] != par[v][i])
-		{
-			u = par[u][i];
-			v = par[v][i];
-		}
+		if (par[x][i] != par[y][i])
+			x = par[x][i], y = par[y][i];
 	}
-
-	return par[u][0];
+	return par[x][0];
 
 
 }
@@ -139,7 +124,7 @@ void solve(int t)
 	while (q--)
 	{
 
-
+		
 		ll x, y;
 		cin >> x >> y;
 		if (lev[y] > lev[x]) swap(x, y);
@@ -171,7 +156,7 @@ void solve(int t)
 		ll q = kthparent(x, dis / 2 - 1);
 
 		cout << subtr[p] - subtr[q] << endl;
-
+		
 
 
 
