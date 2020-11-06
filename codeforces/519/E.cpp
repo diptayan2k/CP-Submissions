@@ -1,233 +1,112 @@
-#include <iostream>
 #include<bits/stdc++.h>
-#define ll long long int
-#define lld long double
-#define F first
-#define S second
-#define f(i,a,b) for(int i=a;i<=b;i++)
-#define g(i,a,b) for(int i=a;i>=b;i--)
-#define pb push_back
-#define mh make_heap
-#define ph push_heap
-#define pq priority_queue
-#define bits(x) __builtin_popcountll(x)
-#define op(x) cout<<"Case #"<<x<<": "
-#define op1(x) cout<<"Scenario #"<<x<<": "
-#define endl "\n"
 using namespace std;
-const ll mod = 1000000007;
-const ll INF = 1000000000000000000;//LLONG_MAX;
-const ll NEGINF = LLONG_MIN;
-const int N = 18;
-const ll MAXN = 1000001;
+#define ll long long int
+vector<ll> adj[100001];
+ll dp[100001][21];
+ll n;
+ll lvl[100001];
+ll sub[100001];
+ll t=0;
 
-vector<ll> v[100001];
-ll par[100001][21];
-ll lev[100001];
-ll in[100001], out[100001];
-ll subtr[100001];
-ll T = 0;
-
-void dfs(ll u, ll parent)
+void dfs(ll x,ll par)
 {
-
-	par[u][0] = parent;
-	subtr[u] = 1;
-	for (auto i : v[u])
+	dp[x][0]=par;
+	sub[x]=1;
+	for(auto i:adj[x])
 	{
-		if (i == parent) continue;
-		lev[i] = lev[u] + 1;
-		dfs(i, u);
-		subtr[u] += subtr[i];
+		if(i==par) continue;
+		lvl[i]=lvl[x]+1;
+		dfs(i,x);
+		sub[x]+=sub[i];
 	}
-
 }
 
-ll kthparent(ll x, ll y)
+ll lca(ll x,ll y)
 {
-	for (ll i = 20; i >= 0; i--)
+	if(lvl[x]<lvl[y])
+	swap(x,y);
+	for(ll i=20;i>=0;i--)
 	{
-		if (y >= (1ll << i))
-			x = par[x][i], y -= (1ll << i);
+		if(lvl[x]-(1ll<<i)>=lvl[y])
+		x=dp[x][i];
+	}
+	if(x==y)
+	return x;
+	for(ll i=20;i>=0;i--)
+	{
+		if(dp[x][i]!=dp[y][i])
+		x=dp[x][i],y=dp[y][i];
+	}
+	return dp[x][0];
+}
+
+ll parent(ll x,ll y)
+{
+	for(ll i=20;i>=0;i--)
+	{
+		if(y>=(1ll<<i))
+		x=dp[x][i],y-=(1ll<<i);
 	}
 	return x;
 }
 
-
-
-
-ll lca(ll x, ll y)
+int main()
 {
-	if (lev[x] < lev[y])
-		swap(x, y);
-	for (ll i = 20; i >= 0; i--)
+	ll i,j,k,m;
+	cin>>n;
+	for(i=0;i<n-1;i++)
 	{
-		if (lev[x] - (1ll << i) >= lev[y])
-			x = par[x][i];
+		cin>>j>>k;
+		j--;k--;
+		adj[j].push_back(k);
+		adj[k].push_back(j);
 	}
-	if (x == y)
-		return x;
-	for (ll i = 20; i >= 0; i--)
+	lvl[0]=0;
+	dfs(0,0);
+	
+	for(j=1;j<=20;j++)
 	{
-		if (par[x][i] != par[y][i])
-			x = par[x][i], y = par[y][i];
-	}
-	return par[x][0];
-
-
-}
-
-
-void solve(int t)
-{
-
-	ll n;
-	cin >> n;
-
-	for (int i = 1; i < n; i++)
-	{
-		ll x, y;
-		cin >> x >> y;
-		v[x].pb(y);
-		v[y].pb(x);
-	}
-
-
-
-	for (int i = 0; i <= n; i++)
-	{
-		for (int j = 0; j <= 20; j++)
+		for(i=0;i<n;i++)
 		{
-			par[i][j] = -1;
+			dp[i][j]=dp[dp[i][j-1]][j-1];
 		}
 	}
-
-	lev[1] = 0;
-	dfs(1, 0);
-
-	for (int i = 1; i <= n; i++)
+	ll test;
+	cin>>test;
+	while(test--)
 	{
-		for (int j = 1; j <= 20; j++)
-		{
-			if (par[i][j - 1] != 0)
-			{
-
-				ll u = par[i][j - 1];
-				if (u != -1)
-					par[i][j] = par[u][j - 1];
-			}
-		}
-	}
-
-	ll q;
-	cin >> q;
-	while (q--)
-	{
-
-
-		ll j, k;
-		cin >> j >> k;
-
-		if (j == k)
-			cout << n << '\n';
+		cin>>j>>k;
+		j--,k--;
+		if(j==k)
+		cout<<n<<'\n';
 		else
 		{
-			ll l = lca(j, k);
-			if (lev[j] - lev[l] == lev[k] - lev[l])
+			ll l=lca(j,k);
+			if(lvl[j]-lvl[l]==lvl[k]-lvl[l])
 			{
-				ll ans = n;
-				ll diff = lev[j] - lev[l] - 1;
-				ll x = kthparent(j, diff);
-				ans -= subtr[x];
-				x = kthparent(k, diff);
-				ans -= subtr[x];
-				cout << ans << "\n";
+				ll ans=n;
+				ll diff=lvl[j]-lvl[l]-1;
+				ll x=parent(j,diff);
+				ans-=sub[x];
+				x=parent(k,diff);
+				ans-=sub[x];
+				cout<<ans<<"\n";
 			}
 			else
 			{
-				ll dist = lev[j] + lev[k] - 2 * lev[l];
-				if (dist % 2 == 1)
-					cout << 0 << '\n';
+				ll dist=lvl[j]+lvl[k]-2*lvl[l];
+				if(dist%2==1)
+				cout<<0<<'\n';
 				else
 				{
-					if (lev[j] < lev[k])
-						swap(j, k);
-					ll x = kthparent(j, dist / 2);
-					ll p1 = kthparent(j, dist / 2 - 1);
-					ll ans = subtr[x] - subtr[p1];
-					cout << ans << '\n';
+					if(lvl[j]<lvl[k])
+					swap(j,k);
+					ll x=parent(j,dist/2);
+					ll p1=parent(j,dist/2-1);
+					ll ans=sub[x]-sub[p1];
+					cout<<ans<<'\n';
 				}
 			}
 		}
-
-		/*
-		ll x, y;
-		cin >> x >> y;
-		if (lev[y] > lev[x]) swap(x, y);
-		ll p = lca(x, y);
-		ll dis = lev[x] + lev[y] - 2 * lev[p];
-
-		if (x == y)
-		{
-			cout << n << endl;
-			continue;
-		}
-		if (dis % 2 == 1)
-		{
-			cout << "0" << endl;
-			continue;
-		}
-		if (lev[x] == lev[y])
-		{
-			ll ans = n;
-			ll dif = abs(lev[p] - lev[x]);
-			ans -= subtr[kthparent(x, dif - 1)];
-			ans -= subtr[kthparent(y, dif - 1)];
-			cout << ans << endl;
-			continue;
-		}
-
-
-		p = kthparent(x, dis / 2);
-		ll q = kthparent(x, dis / 2 - 1);
-
-		cout << subtr[p] - subtr[q] << endl;
-		*/
-
-
-
-
-
-
-
-
-
-	}
-
-
-}
-
-
-int main()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-
-	int t = 1;
-	//cin >> t;
-
-
-
-	for (int i = 1; i <= t; i++)
-	{
-		solve(i);
-
 	}
 }
