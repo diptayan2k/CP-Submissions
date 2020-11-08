@@ -151,6 +151,29 @@ void solve(int t)
 	}
 
 
+
+
+	/*
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 0; j <= 20; j++)
+		{
+			cout << par[i][j] << " ";
+		}
+		cout << endl;
+	}*/
+	/*
+	for (auto i : dp[8][0])
+	{
+		cout << i << " ";
+	}
+
+
+	cout << endl;
+	cout << kthanc(4, 3) << endl;
+
+
+	cout << endl;*/
 	while (q--)
 	{
 		ll x, y, a;
@@ -192,7 +215,7 @@ void solve(int t)
 
 
 		vector<ll> ans = merg(ans1, ans2);
-
+		//ans = merg(ans, id[anc]);
 
 		cout << min((ll)ans.size(), a) << " ";
 		for (int i = 0; i < min((ll)ans.size(), a); i++) cout << ans[i] << " ";
