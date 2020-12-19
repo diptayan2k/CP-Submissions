@@ -1,0 +1,18 @@
+{
+  "CF101752598": {
+    "contest_id": 1459,
+    "language": "GNU C++17",
+    "path": "codeforces\\1459\\B.cpp",
+    "problem_index": "B",
+    "problem_name": "Move and Turn",
+    "problem_url": "https://codeforces.com/contest/1459/problem/B",
+    "submission_id": "CF101752598",
+    "submission_url": "https://codeforces.com/contest/1459/submission/101752598",
+    "tags": [
+      "dp",
+      "math",
+      "*1300"
+    ],
+    "timestamp": "Dec/19/2020 16:25"
+  }
+}
